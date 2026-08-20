@@ -35,7 +35,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Minimal Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p id="footer-copyright">© 2026 NEXE GROUP. Alla rättigheter förbehållna.</p>
+          <p id="footer-copyright">© 2026 NEXE GROUP AB. Alla rättigheter förbehållna.</p>
           <p className="text-slate-500 text-[11px] tracking-wide">
             Moderbolag: NEXE GROUP AB · Säte: Sverige
           </p>
