@@ -18,8 +18,7 @@ export const CompaniesSection: React.FC = () => {
             Våra verksamheter
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            Inom NEXE GROUP AB samlas specialiserade verksamhetsgrenar med självständigt fokus och gemensamma kvalitetsstandarder.
-            Här hittar du våra etablerade områden.
+            Inom NEXE GROUP AB utvecklar flera specialiserade verksamhetsområden under en gemensam identitet.
           </p>
         </div>
 
