@@ -24,8 +24,9 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
         loading="eager"
         onError={(e) => {
           const target = e.currentTarget;
-          if (target.src !== '/nexe-group-logo.jpg' && !target.src.endsWith('/nexe-group-logo.jpg')) {
-            target.src = '/nexe-group-logo.jpg';
+          const fallbackUrl = `${import.meta.env.BASE_URL}nexe-group-logo.jpg`;
+          if (target.src !== fallbackUrl && !target.src.endsWith('nexe-group-logo.jpg')) {
+            target.src = fallbackUrl;
           }
         }}
       />
