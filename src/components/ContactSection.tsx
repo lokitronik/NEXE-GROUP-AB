@@ -15,7 +15,7 @@ export const ContactSection: React.FC = () => {
               id="contact-heading"
               className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B2341] leading-tight mb-6"
             >
-              Kontakt & Förfrågningar
+              Kontakt & Förfrågningar 
             </h2>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
               För övergripande frågor gällande koncernen, affärsutveckling eller ägarfrågor rörande
