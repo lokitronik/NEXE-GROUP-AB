@@ -8,8 +8,8 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-slate-800/80">
           {/* Transparent Logo on dark footer */}
           <div className="flex flex-col items-start">
-            <div className="mb-3">
-              <Logo size="sm" variant="light" />
+            <div className="mb-4">
+              <Logo size="md" variant="light" />
             </div>
             <p className="text-xs text-slate-400 font-light tracking-wide">
               NEXE GROUP AB – Juridiskt bolag för verksamhetsgrenarna inom NEXE-strukturen.

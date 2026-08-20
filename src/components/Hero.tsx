@@ -47,17 +47,17 @@ export const Hero: React.FC = () => {
       {/* Main Single Landscape Unit: Company Head & Active Branches */}
       <div className="relative z-10 w-full max-w-5xl mx-auto my-auto flex flex-col items-center">
         
-        {/* Top: Central NEXE GROUP Logo */}
-        <div className="flex flex-col items-center text-center">
-          <div className="mb-6 sm:mb-8 transition-transform duration-500 hover:scale-[1.02]">
+        {/* Top: Central NEXE GROUP Hero Logo as Main Protagonist */}
+        <div className="relative flex flex-col items-center text-center w-full my-4 sm:my-6">
+          {/* Subtle Ambient Backlight Glow behind Logo */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-96 md:w-[540px] lg:w-[680px] h-32 sm:h-48 md:h-64 bg-blue-500/10 blur-3xl rounded-full pointer-events-none -z-10" />
+
+          <div className="transition-transform duration-500 hover:scale-[1.015] drop-shadow-2xl">
             <Logo size="hero" variant="light" />
           </div>
 
-          <div className="space-y-2 max-w-2xl px-4">
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-light tracking-tight text-slate-100">
-              NEXE GROUP AB
-            </h1>
-            <p className="text-xs sm:text-sm uppercase tracking-[0.22em] font-mono text-slate-400">
+          <div className="mt-4 sm:mt-6 space-y-2 max-w-2xl px-4">
+            <p className="text-xs sm:text-sm md:text-base uppercase tracking-[0.25em] font-mono text-slate-300 font-light">
               Ett bolag med flera specialiserade verksamhetsgrenar
             </p>
           </div>
