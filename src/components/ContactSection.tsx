@@ -33,7 +33,7 @@ export const ContactSection: React.FC = () => {
                   rel="noopener noreferrer"
                   className="text-[#0B2341] font-medium underline inline-flex items-center gap-0.5"
                 >
-                  NEXE SANERING AB
+                  NEXE SANERING 
                   <ArrowUpRight className="w-3 h-3" />
                 </a>
                 .
