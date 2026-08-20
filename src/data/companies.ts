@@ -9,7 +9,7 @@ export const companies: Company[] = [
     description:
       'Verksamhetsgren med fokus på specialiserad sanering, teknisk rengöring och hygienlösningar för krävande miljöer.',
     url: 'https://lokitronik.github.io/NEXE-SANERING/',
-    category: 'Specialistsanering',
+    category: 'Särskilt företagsnamn',
     highlights: [
       'Dekontaminering & sanering',
       'Känsliga miljöer & säkerhetsprotokoll',
@@ -26,7 +26,7 @@ export const companies: Company[] = [
     description:
       'Verksamhetsgren inom förnybar energi, solcellsanläggningar, teknisk service och tillhörande montage.',
     url: '', // Lägg till url vid lansering
-    category: 'Solenergi & Teknik',
+    category: 'Särskilt företagsnamn',
     highlights: [
       'Solcellsinstallationer',
       'Teknisk drift & underhåll',

@@ -14,16 +14,16 @@ export const ContactSection: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* Left Column: Central Holding Contact */}
+          {/* Left Column: Company Contact & Invoicing */}
           <div className="lg:col-span-6 space-y-6">
             <h2
               id="contact-heading"
               className="text-2xl sm:text-3xl font-light tracking-tight text-[#0B2341]"
             >
-              Koncernkontakt
+              Bolagskontakt & Fakturering
             </h2>
             <p className="text-sm sm:text-base text-slate-600 font-light leading-relaxed">
-              För övergripande koncernfrågor, fakturering, bolagsstyrning och affärsrelationer gällande NEXE GROUP AB.
+              För övergripande frågor, avtal, fakturering och affärsrelationer gällande NEXE GROUP AB och våra verksamhetsgrenar.
             </p>
 
             <div className="pt-4">
@@ -54,14 +54,14 @@ export const ContactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Routing to individual companies */}
+          {/* Right Column: Routing to individual branches */}
           <div className="lg:col-span-6 lg:pl-8 lg:border-l lg:border-slate-200 space-y-6">
             <h3 className="text-xs font-mono uppercase tracking-widest text-slate-400">
-              Operativa verksamheter
+              Våra verksamhetsgrenar
             </h3>
             
             <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed">
-              För frågor rörande specifika operativa uppdrag eller tekniska tjänster hänvisas till respektive verksamhet inom koncernen:
+              För frågor rörande specifika operativa uppdrag eller tekniska tjänster hänvisas till respektive verksamhetsområde:
             </p>
 
             <div className="space-y-4 pt-2">
@@ -79,17 +79,17 @@ export const ContactSection: React.FC = () => {
                   </a>
                 </div>
                 <p className="text-xs text-slate-500 font-light mt-1">
-                  Specialiserad sanering och teknisk rengöring
+                  Specialiserad sanering, teknisk rengöring och hygienlösningar
                 </p>
               </div>
 
               <div className="p-4 bg-white border border-slate-200 rounded-xs">
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-semibold text-[#0B2341]">NEXE SOLAR</span>
-                  <span className="text-[10px] font-mono uppercase text-slate-400">Koncerndel</span>
+                  <span className="text-[10px] font-mono uppercase text-slate-400">Verksamhetsgren</span>
                 </div>
                 <p className="text-xs text-slate-500 font-light mt-1">
-                  Solenergi och tekniska installationer
+                  Solenergi, tekniska installationer och montage
                 </p>
               </div>
             </div>

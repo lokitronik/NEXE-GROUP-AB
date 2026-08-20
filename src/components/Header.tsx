@@ -15,8 +15,8 @@ export const Header: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Koncernstruktur', href: '#koncernstruktur' },
     { name: 'Verksamheter', href: '#hero-structure' },
+    { name: 'Bolagsstruktur', href: '#bolagsstruktur' },
     { name: 'Kontakt', href: '#kontakt' },
   ];
 

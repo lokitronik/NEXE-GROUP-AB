@@ -44,10 +44,10 @@ export const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-radial from-transparent via-[#071322]/20 to-[#071322]/85" />
       </div>
 
-      {/* Main Single Landscape Unit: Group Head & Subordinate Activities */}
+      {/* Main Single Landscape Unit: Company Head & Active Branches */}
       <div className="relative z-10 w-full max-w-5xl mx-auto my-auto flex flex-col items-center">
         
-        {/* Top: Central NEXE GROUP Transparent Logo */}
+        {/* Top: Central NEXE GROUP Logo */}
         <div className="flex flex-col items-center text-center">
           <div className="mb-6 sm:mb-8 transition-transform duration-500 hover:scale-[1.02]">
             <Logo size="hero" variant="light" />
@@ -57,8 +57,8 @@ export const Hero: React.FC = () => {
             <h1 className="text-xl sm:text-2xl md:text-3xl font-light tracking-tight text-slate-100">
               NEXE GROUP AB
             </h1>
-            <p className="text-xs sm:text-sm uppercase tracking-[0.25em] font-mono text-slate-400">
-              Koncernmoderbolag & Central Struktur
+            <p className="text-xs sm:text-sm uppercase tracking-[0.22em] font-mono text-slate-400">
+              Ett bolag med flera specialiserade verksamhetsgrenar
             </p>
           </div>
         </div>
@@ -68,13 +68,13 @@ export const Hero: React.FC = () => {
           <div className="w-[1px] h-8 sm:h-12 bg-gradient-to-b from-slate-400/80 via-slate-500/40 to-slate-600/20" />
           <div className="flex items-center gap-3 my-2">
             <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] text-slate-400">
-              Verksamheter & Bolag under NEXE-strukturen
+              Verksamheter under NEXE GROUP AB
             </span>
           </div>
           <div className="w-full max-w-2xl h-[1px] bg-slate-700/60 hidden md:block" />
         </div>
 
-        {/* Corporate Units Grid (Easily expandable for future companies) */}
+        {/* Activity Units Grid (Easily expandable for future activities) */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {companies.map((company) => {
             const hasExternalUrl = Boolean(company.url && company.url.trim() !== '');
@@ -93,11 +93,11 @@ export const Hero: React.FC = () => {
                     </span>
                     <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-slate-400">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400/80" />
-                      Aktiv enhet
+                      Aktiv verksamhet
                     </span>
                   </div>
 
-                  {/* Company Name */}
+                  {/* Company/Branch Name */}
                   <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-white mb-2">
                     {company.name}
                   </h2>
@@ -123,11 +123,11 @@ export const Hero: React.FC = () => {
                     </a>
                   ) : (
                     <span className="text-xs uppercase tracking-widest font-mono text-slate-500">
-                      Koncerndel
+                      Verksamhetsgren
                     </span>
                   )}
                   <span className="text-[10px] font-mono text-slate-500">
-                    NEXE GROUP AB
+                    Juridiskt: NEXE GROUP AB
                   </span>
                 </div>
               </div>
@@ -136,13 +136,13 @@ export const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Subtle bottom scroll prompt to structure & contact */}
+      {/* Bottom scroll prompt */}
       <div className="relative z-10 w-full flex justify-center pt-8">
         <a
-          href="#koncernstruktur"
+          href="#bolagsstruktur"
           className="text-[11px] font-mono uppercase tracking-[0.2em] text-slate-500 hover:text-slate-300 transition-colors flex items-center gap-2"
         >
-          <span>Koncerninformation</span>
+          <span>Bolagsinformation</span>
           <span className="opacity-60">↓</span>
         </a>
       </div>
