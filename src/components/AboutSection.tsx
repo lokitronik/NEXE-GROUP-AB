@@ -24,7 +24,7 @@ export const AboutSection: React.FC = () => {
           {/* Right Column: Short and Sophisticated Copy */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             <p className="text-xl sm:text-2xl font-normal text-slate-800 leading-relaxed mb-6">
-              NEXE GROUP samlar specialiserade verksamheter inom olika områden, med ett gemensamt fokus på kvalitet,
+              NEXE GROUP AB samlar specialiserade verksamheter inom olika områden, med ett gemensamt fokus på kvalitet,
               teknik och långsiktig utveckling.
             </p>
             <p className="text-base text-slate-600 leading-relaxed">
