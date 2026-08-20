@@ -1,0 +1,8 @@
+{
+  "name": "NEXE GROUP AB",
+  "description": "Officiell webbplats för moderbolaget NEXE GROUP AB – specialiserade verksamheter och koncernstruktur.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
