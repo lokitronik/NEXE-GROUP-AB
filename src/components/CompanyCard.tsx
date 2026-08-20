@@ -1,6 +1,6 @@
 import React from 'react';
 import { Company } from '../types';
-import { ExternalLink, CheckCircle2, Building2, ArrowRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight } from 'lucide-react';
 
 interface CompanyCardProps {
   company: Company;
@@ -12,78 +12,64 @@ export const CompanyCard: React.FC<CompanyCardProps> = ({ company }) => {
   return (
     <article
       id={`company-${company.id}`}
-      className="bg-white border border-slate-200/90 rounded-sm p-8 sm:p-10 lg:p-12 transition-all duration-300 hover:border-slate-300 hover:shadow-lg relative overflow-hidden"
+      className="bg-white border border-slate-200/90 rounded-xs p-8 sm:p-12 lg:p-14 transition-all duration-300 hover:border-slate-400/80 group"
     >
-      {/* Top accent bar matching NEXE corporate navy */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-[#0B2341]" />
-
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-        {/* Left / Main Info */}
+      <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-10">
+        {/* Left Column: Details */}
         <div className="max-w-2xl">
           <div className="flex items-center gap-3 mb-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-slate-100 text-[#0B2341] text-xs font-semibold uppercase tracking-wider rounded-xs">
-              <Building2 className="w-3.5 h-3.5" />
-              <span>Specialiserad verksamhet</span>
-            </span>
-            <span className="text-xs text-slate-400 font-mono tracking-tight">
+            <span className="text-[11px] font-mono uppercase tracking-widest text-slate-400">
               {company.category}
             </span>
           </div>
 
-          <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-[#0B2341] mb-3">
+          <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#0B2341] mb-4">
             {company.legalName}
           </h3>
 
-          <p className="text-base sm:text-lg text-slate-700 font-normal leading-relaxed mb-6">
+          <p className="text-base sm:text-lg text-slate-600 font-light leading-relaxed mb-8">
             {company.description}
           </p>
 
-          {/* Key competence tags */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 mb-2">
+          {/* Highlights / Scope */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
             {company.highlights.map((highlight, index) => (
-              <div key={index} className="flex items-center gap-2 text-sm text-slate-600">
-                <CheckCircle2 className="w-4 h-4 text-[#0B2341] shrink-0" />
+              <div key={index} className="flex items-center gap-2.5 text-sm text-slate-500">
+                <span className="w-1 h-1 rounded-full bg-[#0B2341]/60 shrink-0" />
                 <span>{highlight}</span>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Right / CTA Area */}
-        <div className="lg:border-l lg:border-slate-200 lg:pl-10 flex flex-col justify-center shrink-0">
+        {/* Right Column: Clean Action */}
+        <div className="lg:pt-2 flex flex-col items-start lg:items-end justify-start shrink-0">
           {hasExternalUrl ? (
-            <>
-              <a
-                href={company.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                id={`cta-${company.id}`}
-                aria-label={`Besök webbplatsen för ${company.legalName} (öppnas i ny flik)`}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#0B2341] hover:bg-[#143258] text-white text-sm font-semibold tracking-wide rounded-sm transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.99] whitespace-nowrap group"
-              >
-                <span>{company.ctaText}</span>
-                <ExternalLink className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-              <p className="text-xs text-slate-400 mt-2.5 text-center lg:text-left">
-                Öppnas på extern domän
-              </p>
-            </>
+            <a
+              href={company.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              id={`cta-${company.id}`}
+              aria-label={`Besök webbplatsen för ${company.legalName} (öppnas i ny flik)`}
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-[#0B2341] hover:text-[#143258] transition-colors py-2 group/btn border-b border-[#0B2341]/30 hover:border-[#0B2341]"
+            >
+              <span>{company.ctaText}</span>
+              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+            </a>
           ) : (
-            <>
-              <a
-                href="#kontakt"
-                id={`cta-${company.id}`}
-                aria-label={`Kontakta NEXE GROUP gällande ${company.legalName}`}
-                className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#0B2341] hover:bg-[#143258] text-white text-sm font-semibold tracking-wide rounded-sm transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.99] whitespace-nowrap group"
-              >
-                <span>{company.ctaText}</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </a>
-              <p className="text-xs text-slate-400 mt-2.5 text-center lg:text-left">
-                Förfrågan via koncernen
-              </p>
-            </>
+            <a
+              href="#kontakt"
+              id={`cta-${company.id}`}
+              aria-label={`Kontakta NEXE GROUP gällande ${company.legalName}`}
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-semibold text-[#0B2341] hover:text-[#143258] transition-colors py-2 group/btn border-b border-[#0B2341]/30 hover:border-[#0B2341]"
+            >
+              <span>{company.ctaText}</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5" />
+            </a>
           )}
+          <span className="text-[11px] text-slate-400 mt-2 font-mono">
+            {hasExternalUrl ? 'Extern webbplats' : 'Koncernförfrågan'}
+          </span>
         </div>
       </div>
     </article>

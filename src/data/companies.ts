@@ -1,4 +1,4 @@
-import { Company, ValuePillar } from '../types';
+import { Company } from '../types';
 
 export const companies: Company[] = [
   {
@@ -7,59 +7,32 @@ export const companies: Company[] = [
     legalName: 'NEXE SANERING',
     tagline: 'Specialiserad sanering & teknisk rengöring',
     description:
-      'Specialiserad sanering, teknisk rengöring och hygienlösningar för känsliga och krävande miljöer.',
+      'Verksamhetsgren med fokus på specialiserad sanering, teknisk rengöring och hygienlösningar för krävande miljöer.',
     url: 'https://lokitronik.github.io/NEXE-SANERING/',
-    category: 'Specialistsanering & Teknisk rengöring',
+    category: 'Specialistsanering',
     highlights: [
-      'Känsliga & krävande miljöer',
-      'Teknisk rengöring & dekontaminering',
-      'Hygien- & saneringslösningar',
-      'Certifierade metoder & säkerhetsprotokoll',
+      'Dekontaminering & sanering',
+      'Känsliga miljöer & säkerhetsprotokoll',
+      'Teknisk rengöring',
     ],
     status: 'active',
-    ctaText: 'Besök NEXE Sanering →',
+    ctaText: 'Gå till verksamhet',
   },
   {
     id: 'nexe-solar',
     name: 'NEXE SOLAR',
     legalName: 'NEXE SOLAR',
-    tagline: 'Solenergi & tekniska installationstjänster',
+    tagline: 'Solenergi & tekniska installationer',
     description:
-      'Solenergi, installation, underhåll och tekniska lösningar för fastigheter och företag.',
-    url: '', // Lägg till webbadress här när den lanseras
-    category: 'Solenergi & Installationstjänster',
+      'Verksamhetsgren inom förnybar energi, solcellsanläggningar, teknisk service och tillhörande montage.',
+    url: '', // Lägg till url vid lansering
+    category: 'Solenergi & Teknik',
     highlights: [
-      'Installation av solpaneler',
-      'Underhåll och service',
-      'Teknisk kontroll',
-      'Solenergilösningar',
-      'Relaterade installationstjänster',
+      'Solcellsinstallationer',
+      'Teknisk drift & underhåll',
+      'Energilösningar',
     ],
     status: 'active',
-    ctaText: 'Besök NEXE Solar →',
-  },
-];
-
-export const valuePillars: ValuePillar[] = [
-  {
-    id: 'precision',
-    title: 'Kvalitet & Precision',
-    description:
-      'Varje verksamhet inom koncernen drivs av kompromisslösa standarder och metodisk noggrannhet.',
-    indexNumber: '01',
-  },
-  {
-    id: 'expertise',
-    title: 'Specialiserad Expertis',
-    description:
-      'Vi fokuserar på nischade områden med djup branschkunskap och certifierad spetskompetens.',
-    indexNumber: '02',
-  },
-  {
-    id: 'longterm',
-    title: 'Långsiktig Utveckling',
-    description:
-      'Ett ansvarsfullt och stabilt ägande som skapar varaktigt förtroende och hållbar tillväxt.',
-    indexNumber: '03',
+    ctaText: 'Under utveckling',
   },
 ];

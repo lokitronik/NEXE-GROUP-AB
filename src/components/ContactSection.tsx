@@ -1,94 +1,96 @@
 import React from 'react';
-import { Mail, MapPin, Building, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 export const ContactSection: React.FC = () => {
   return (
-    <section id="kontakt" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-[#F8FAFC] border-t border-slate-200/80">
-      <div className="max-w-6xl mx-auto">
+    <section id="kontakt" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-16 bg-[#F4F5F7] text-slate-900">
+      <div className="max-w-5xl mx-auto">
+        {/* Minimal Section Label */}
+        <div className="flex items-center gap-3 mb-12">
+          <span className="text-xs font-mono uppercase tracking-[0.2em] text-slate-400">
+            Kontakt & Bolagsuppgifter
+          </span>
+          <div className="h-[1px] w-12 bg-slate-300" />
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* Left Column */}
-          <div className="lg:col-span-6">
-            <span className="text-xs uppercase font-bold tracking-widest text-slate-500 mb-3 block">
-              Koncernkontakt
-            </span>
+          {/* Left Column: Central Holding Contact */}
+          <div className="lg:col-span-6 space-y-6">
             <h2
               id="contact-heading"
-              className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B2341] leading-tight mb-6"
+              className="text-2xl sm:text-3xl font-light tracking-tight text-[#0B2341]"
             >
-              Kontakt & Förfrågningar 
+              Koncernkontakt
             </h2>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
-              För övergripande frågor gällande koncernen, affärsutveckling eller ägarfrågor rörande
-              NEXE GROUP AB är du välkommen att kontakta oss.
+            <p className="text-sm sm:text-base text-slate-600 font-light leading-relaxed">
+              För övergripande koncernfrågor, fakturering, bolagsstyrning och affärsrelationer gällande NEXE GROUP AB.
             </p>
-            <div className="text-sm text-slate-500 bg-white p-5 border border-slate-200 rounded-sm space-y-3">
-              <strong className="text-slate-700 font-semibold block">
-                Operativa ärenden och tjänsteförfrågningar:
-              </strong>
-              <p>
-                För sanering och teknisk rengöring, besök{' '}
-                <a
-                  href="https://lokitronik.github.io/NEXE-SANERING/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#0B2341] font-medium underline inline-flex items-center gap-0.5"
-                >
-                  NEXE SANERING 
-                  <ArrowUpRight className="w-3 h-3" />
-                </a>
-                .
-              </p>
-              <p>
-                För solenergi, installation och teknisk service inom <strong className="text-slate-700 font-medium">NEXE SOLAR</strong>, vänligen vänd er direkt till koncernkontakten nedan.
-              </p>
+
+            <div className="pt-4">
+              <span className="text-xs font-mono uppercase tracking-widest text-slate-400 block mb-1">
+                E-postadress
+              </span>
+              <a
+                href="mailto:kontakt@nexegroup.se"
+                className="text-xl sm:text-2xl font-light text-[#0B2341] hover:text-[#143258] transition-colors inline-block border-b border-[#0B2341]/20 hover:border-[#0B2341]"
+              >
+                kontakt@nexegroup.se
+              </a>
+            </div>
+
+            <div className="pt-4 grid grid-cols-2 gap-4">
+              <div>
+                <span className="text-[11px] font-mono uppercase tracking-widest text-slate-400 block">
+                  Juridiskt namn
+                </span>
+                <p className="text-sm font-medium text-[#0B2341] mt-0.5">NEXE GROUP AB</p>
+              </div>
+              <div>
+                <span className="text-[11px] font-mono uppercase tracking-widest text-slate-400 block">
+                  Säte
+                </span>
+                <p className="text-sm font-medium text-[#0B2341] mt-0.5">Sverige</p>
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Contact Details & Holding Information */}
-          <div className="lg:col-span-6 flex flex-col justify-center">
-            <div className="bg-white p-8 sm:p-10 border border-slate-200 rounded-sm shadow-xs space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-sm bg-slate-100 flex items-center justify-center text-[#0B2341] shrink-0 mt-0.5">
-                  <Building className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-xs uppercase font-bold tracking-wider text-slate-400 mb-1">
-                    Bolagsform
-                  </h3>
-                  <p className="text-base font-semibold text-[#0B2341]">NEXE GROUP AB</p>
-                  <p className="text-sm text-slate-500">Moderbolag & Koncernledning</p>
-                </div>
-              </div>
+          {/* Right Column: Routing to individual companies */}
+          <div className="lg:col-span-6 lg:pl-8 lg:border-l lg:border-slate-200 space-y-6">
+            <h3 className="text-xs font-mono uppercase tracking-widest text-slate-400">
+              Operativa verksamheter
+            </h3>
+            
+            <p className="text-xs sm:text-sm text-slate-600 font-light leading-relaxed">
+              För frågor rörande specifika operativa uppdrag eller tekniska tjänster hänvisas till respektive verksamhet inom koncernen:
+            </p>
 
-              <div className="border-t border-slate-100 pt-5 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-sm bg-slate-100 flex items-center justify-center text-[#0B2341] shrink-0 mt-0.5">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-xs uppercase font-bold tracking-wider text-slate-400 mb-1">
-                    Säte
-                  </h3>
-                  <p className="text-base font-medium text-slate-800">Sverige</p>
-                  <p className="text-sm text-slate-500">Verksamma nationellt via specialiserade affärsområden</p>
-                </div>
-              </div>
-
-              <div className="border-t border-slate-100 pt-5 flex items-start gap-4">
-                <div className="w-10 h-10 rounded-sm bg-slate-100 flex items-center justify-center text-[#0B2341] shrink-0 mt-0.5">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-xs uppercase font-bold tracking-wider text-slate-400 mb-1">
-                    Koncernärenden
-                  </h3>
+            <div className="space-y-4 pt-2">
+              <div className="p-4 bg-white border border-slate-200 rounded-xs">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold text-[#0B2341]">NEXE SANERING</span>
                   <a
-                    href="mailto:kontakt@nexegroup.se"
-                    className="text-base font-medium text-[#0B2341] hover:underline"
+                    href="https://lokitronik.github.io/NEXE-SANERING/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs uppercase tracking-widest font-semibold text-[#0B2341] hover:text-[#143258] inline-flex items-center gap-1"
                   >
-                    kontakt@nexegroup.se
+                    Webbplats
+                    <ArrowUpRight className="w-3.5 h-3.5" />
                   </a>
-                  <p className="text-xs text-slate-400 mt-0.5">Besvaras av koncernledningen</p>
                 </div>
+                <p className="text-xs text-slate-500 font-light mt-1">
+                  Specialiserad sanering och teknisk rengöring
+                </p>
+              </div>
+
+              <div className="p-4 bg-white border border-slate-200 rounded-xs">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold text-[#0B2341]">NEXE SOLAR</span>
+                  <span className="text-[10px] font-mono uppercase text-slate-400">Koncerndel</span>
+                </div>
+                <p className="text-xs text-slate-500 font-light mt-1">
+                  Solenergi och tekniska installationer
+                </p>
               </div>
             </div>
           </div>

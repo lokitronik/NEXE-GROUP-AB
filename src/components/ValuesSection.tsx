@@ -1,54 +1,70 @@
 import React from 'react';
-import { Layers, Target, ShieldCheck } from 'lucide-react';
 
 export const ValuesSection: React.FC = () => {
   return (
-    <section id="vardegrund" className="py-24 sm:py-32 px-6 sm:px-8 lg:px-12 bg-white border-t border-slate-200/80">
+    <section id="arbetssatt" className="py-28 sm:py-36 lg:py-44 px-6 sm:px-8 lg:px-16 bg-[#FAFBFD] border-t border-slate-200/80">
+      {/* Invisible anchor target for backwards compatibility */}
+      <span id="vardegrund" className="sr-only" />
+
       <div className="max-w-6xl mx-auto">
-        <div className="max-w-3xl mb-16">
-          <span className="text-xs uppercase font-bold tracking-widest text-slate-500 mb-3 block">
-            Styrning & Ambition
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0B2341] leading-tight mb-4">
-            Strukturerat ägande för hållbar framgång
-          </h2>
-          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            Som moderbolag säkerställer NEXE GROUP AB rätt förutsättningar för våra operativa
-            verksamheter att utvecklas och leverera högsta möjliga värde till sina uppdragsgivare.
-          </p>
+        {/* Section Identifier */}
+        <div className="mb-16 sm:mb-20">
+          <div className="flex items-center gap-4 mb-8">
+            <span className="text-xs uppercase tracking-[0.25em] font-mono text-slate-400">
+              03 — Arbetssätt & Filosofi
+            </span>
+            <div className="h-[1px] w-12 bg-slate-300" />
+          </div>
+
+          <div className="max-w-3xl">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-light tracking-tight text-[#0B2341] leading-tight mb-6">
+              Strukturerat ägande för långsiktig framgång
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600 font-light leading-relaxed">
+              Som moderbolag säkerställer NEXE GROUP AB rätt strategiska förutsättningar för våra operativa
+              verksamheter att utvecklas och leverera högsta värde till sina uppdragsgivare.
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-[#FAFBFD] p-8 border border-slate-200/80 rounded-sm">
-            <div className="w-10 h-10 rounded-sm bg-[#0B2341] text-white flex items-center justify-center mb-6">
-              <Target className="w-5 h-5" />
-            </div>
-            <h3 className="text-lg font-bold text-[#0B2341] mb-3">Fokus & Autonomi</h3>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              Varje verksamhet behåller sitt operativa entreprenörskap och specialisering, med
-              frihet att agera snabbt och nära kundens behov.
+        {/* Minimal Editorial 3-Column Layout with Subtle Dividers */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 pt-8 border-t border-slate-200">
+          <div className="space-y-4">
+            <span className="text-xs font-mono text-slate-400 uppercase tracking-widest block">
+              Pelare 01
+            </span>
+            <h3 className="text-xl font-medium text-[#0B2341]">
+              Fokus & Autonomi
+            </h3>
+            <p className="text-sm sm:text-base text-slate-600 font-light leading-relaxed">
+              Varje verksamhet behåller sitt entreprenörskap och sin specialisering, med full
+              frihet att agera snabbt och lyhört nära kundens behov.
             </p>
           </div>
 
-          <div className="bg-[#FAFBFD] p-8 border border-slate-200/80 rounded-sm">
-            <div className="w-10 h-10 rounded-sm bg-[#0B2341] text-white flex items-center justify-center mb-6">
-              <Layers className="w-5 h-5" />
-            </div>
-            <h3 className="text-lg font-bold text-[#0B2341] mb-3">Koncernsynergier</h3>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              Gemensamma funktioner inom administration, affärsutveckling och kvalitetssäkring ger
-              stabila stordriftsfördelar.
+          <div className="space-y-4">
+            <span className="text-xs font-mono text-slate-400 uppercase tracking-widest block">
+              Pelare 02
+            </span>
+            <h3 className="text-xl font-medium text-[#0B2341]">
+              Koncernsynergier
+            </h3>
+            <p className="text-sm sm:text-base text-slate-600 font-light leading-relaxed">
+              Gemensamma funktioner inom affärsutveckling, strategi och administration ger
+              stabila stordriftsfördelar och en trygg grund.
             </p>
           </div>
 
-          <div className="bg-[#FAFBFD] p-8 border border-slate-200/80 rounded-sm">
-            <div className="w-10 h-10 rounded-sm bg-[#0B2341] text-white flex items-center justify-center mb-6">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <h3 className="text-lg font-bold text-[#0B2341] mb-3">Kvalitetsgaranti</h3>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              Varumärket NEXE står för högsta noggrannhet, certifierad kompetens och ett
-              tryggt samarbete för alla parter.
+          <div className="space-y-4">
+            <span className="text-xs font-mono text-slate-400 uppercase tracking-widest block">
+              Pelare 03
+            </span>
+            <h3 className="text-xl font-medium text-[#0B2341]">
+              Kvalitetsgaranti
+            </h3>
+            <p className="text-sm sm:text-base text-slate-600 font-light leading-relaxed">
+              Varumärket NEXE representerar kompromisslös noggrannhet, certifierad kompetens och
+              långsiktigt hållbara samarbeten.
             </p>
           </div>
         </div>

@@ -3,41 +3,38 @@ import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
   return (
-    <footer id="main-footer" className="bg-[#0B2341] text-white py-14 px-6 sm:px-8 lg:px-12 border-t border-slate-800">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-slate-800/80">
-          {/* Logo / Brand container */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <div className="bg-white px-3 py-1.5 rounded-xs inline-flex mb-3">
-              <Logo size="sm" />
+    <footer id="main-footer" className="bg-[#050E1A] text-white py-14 sm:py-16 px-6 sm:px-8 lg:px-16 border-t border-slate-800">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-slate-800/80">
+          {/* Transparent Logo directly on dark footer */}
+          <div className="flex flex-col items-start">
+            <div className="mb-3">
+              <Logo size="sm" variant="light" />
             </div>
-            <p className="text-xs text-slate-400 max-w-sm tracking-wide">
-              Specialiserade verksamheter. Gemensamma ambitioner.
+            <p className="text-xs text-slate-400 font-light tracking-wide">
+              Koncernmoderbolag för verksamheterna inom NEXE-strukturen.
             </p>
           </div>
 
-          {/* Quick Swedish Links */}
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-8 text-xs uppercase tracking-wider font-medium text-slate-300">
-            <a href="#om-koncernen" className="hover:text-white transition-colors">
-              Om koncernen
+          {/* Quick links */}
+          <div className="flex flex-wrap gap-8 text-xs uppercase tracking-widest font-medium text-slate-400">
+            <a href="#hero-structure" className="hover:text-white transition-colors duration-200">
+              Verksamheter
             </a>
-            <a href="#verksamheter" className="hover:text-white transition-colors">
-              Våra verksamheter
+            <a href="#koncernstruktur" className="hover:text-white transition-colors duration-200">
+              Struktur & Funktion
             </a>
-            <a href="#vardegrund" className="hover:text-white transition-colors">
-              Värdegrund
-            </a>
-            <a href="#kontakt" className="hover:text-white transition-colors">
+            <a href="#kontakt" className="hover:text-white transition-colors duration-200">
               Kontakt
             </a>
           </div>
         </div>
 
         {/* Bottom Minimal Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-500 font-mono">
           <p id="footer-copyright">© 2026 NEXE GROUP AB. Alla rättigheter förbehållna.</p>
-          <p className="text-slate-500 text-[11px] tracking-wide">
-            Moderbolag: NEXE GROUP AB · Säte: Sverige
+          <p className="text-[11px] tracking-wide">
+            Moderbolag & Central Struktur · Säte: Sverige
           </p>
         </div>
       </div>
