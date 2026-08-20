@@ -4,7 +4,7 @@ export const companies: Company[] = [
   {
     id: 'nexe-sanering',
     name: 'NEXE SANERING',
-    legalName: 'NEXE SANERING AB',
+    legalName: 'NEXE SANERING',
     tagline: 'Specialiserad sanering & teknisk rengöring',
     description:
       'Specialiserad sanering, teknisk rengöring och hygienlösningar för känsliga och krävande miljöer.',
