@@ -10,14 +10,14 @@ interface LogoProps {
 
 export const Logo: React.FC<LogoProps> = ({
   className = '',
-  size = 'md',
-  variant = 'default',
+  size = 'hero',
+  variant = 'light',
 }) => {
   const sizeClasses = {
-    sm: 'h-9 sm:h-10 md:h-11 max-w-[220px]',
-    md: 'h-14 sm:h-16 md:h-20 max-w-[320px]',
-    lg: 'h-24 sm:h-32 md:h-40 max-w-[500px]',
-    hero: 'h-36 sm:h-48 md:h-60 lg:h-72 xl:h-80 max-w-[92vw] sm:max-w-2xl lg:max-w-3xl',
+    sm: 'h-8 sm:h-9 md:h-10 max-w-[200px]',
+    md: 'h-12 sm:h-14 md:h-16 max-w-[280px]',
+    lg: 'h-20 sm:h-24 md:h-28 max-w-[420px]',
+    hero: 'h-28 sm:h-36 md:h-44 lg:h-52 xl:h-60 max-w-[90vw] sm:max-w-xl md:max-w-2xl',
   };
 
   const imageSrc = variant === 'light' ? logoLight : logoTransparent;
@@ -31,7 +31,7 @@ export const Logo: React.FC<LogoProps> = ({
       <img
         src={imageSrc}
         alt="NEXE GROUP AB"
-        className={`${sizeClasses[size]} w-auto object-contain transition-all duration-300 block drop-shadow-md`}
+        className={`${sizeClasses[size]} w-auto object-contain transition-transform duration-500 block drop-shadow-xl`}
         referrerPolicy="no-referrer"
         loading="eager"
         onError={(e) => {
