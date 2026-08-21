@@ -27,14 +27,8 @@ export default function App() {
 
       {/* Center Zone: Group Companies / Activities - Dark Contrast Cards */}
       <main className="relative z-10 w-full max-w-4xl mx-auto my-auto px-4 sm:px-8 lg:px-12 py-4 sm:py-6 lg:py-8 flex flex-col items-center">
-        {/* Minimal Section Divider */}
-        <div className="flex items-center gap-3 mb-4 sm:mb-6 lg:mb-8 opacity-70" aria-hidden="true">
-          <div className="w-8 sm:w-12 h-[1px] bg-slate-300" />
-          <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] text-slate-500 font-medium">
-            Verksamheter
-          </span>
-          <div className="w-8 sm:w-12 h-[1px] bg-slate-300" />
-        </div>
+        {/* Minimal Horizontal Divider */}
+        <div className="w-24 sm:w-32 h-[1px] bg-slate-300 mb-6 sm:mb-8 opacity-80" aria-hidden="true" />
 
         {/* Horizontal Companies Structure (Dark Cards on White Background) */}
         <section
