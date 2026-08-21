@@ -5,61 +5,38 @@ import { ArrowUpRight } from 'lucide-react';
 
 export default function App() {
   return (
-    <div className="relative min-h-screen lg:h-screen lg:max-h-screen w-full flex flex-col justify-between items-center bg-[#050D1A] text-white selection:bg-slate-700 selection:text-white px-6 sm:px-10 lg:px-16 py-8 sm:py-10 lg:py-10 overflow-x-hidden">
-      {/* Background Atmosphere */}
-      <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-        {/* Deep Nordic Radial Gradient */}
+    <div className="relative min-h-screen lg:h-screen lg:max-h-screen w-full flex flex-col justify-between items-center bg-[#FFFFFF] text-slate-900 selection:bg-slate-800 selection:text-white overflow-x-hidden">
+      
+      {/* Subtle light background refinement */}
+      <div className="absolute inset-0 pointer-events-none select-none">
         <div
-          className="absolute inset-0 bg-gradient-to-b from-[#040A14] via-[#071526] to-[#040A14] opacity-95"
-          style={{
-            backgroundImage: `
-              radial-gradient(ellipse 60% 40% at 50% 20%, rgba(24, 60, 104, 0.28) 0%, transparent 75%),
-              radial-gradient(ellipse 80% 50% at 50% 100%, rgba(8, 20, 36, 0.7) 0%, transparent 100%)
-            `,
-          }}
+          className="absolute inset-0 bg-radial from-transparent via-[#F8FAFC]/50 to-[#EDF2F7]/70"
         />
-
-        {/* Minimal Horizon Vector */}
-        <svg
-          className="absolute bottom-0 left-0 right-0 w-full h-40 sm:h-56 lg:h-64 object-cover opacity-20 text-[#10253E]"
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-          fill="none"
-        >
-          <path
-            fill="currentColor"
-            d="M0,192L80,197.3C160,203,320,213,480,202.7C640,192,800,160,960,165.3C1120,171,1280,213,1360,218.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
-          />
-        </svg>
-
-        {/* Subtle Vignette */}
-        <div className="absolute inset-0 bg-radial from-transparent via-[#050D1A]/30 to-[#050D1A]/90" />
+        {/* Soft geometric hairline accent */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       </div>
 
-      {/* Top / Main Element: Official Logo */}
-      <header className="relative z-10 w-full flex flex-col items-center pt-2 sm:pt-4">
+      {/* Main Top Header: Official Logo on White Canvas */}
+      <header className="relative z-10 w-full flex flex-col items-center pt-8 sm:pt-10 lg:pt-12 px-6">
         <div className="relative flex flex-col items-center">
-          {/* Subtle Ambient Backlight Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-80 md:w-[480px] lg:w-[560px] h-28 sm:h-36 md:h-44 bg-blue-500/10 blur-3xl rounded-full pointer-events-none -z-10" />
-
           <div className="transition-transform duration-500 hover:scale-[1.015]">
-            <Logo size="hero" variant="light" />
+            <Logo size="hero" variant="default" />
           </div>
         </div>
       </header>
 
-      {/* Center Zone: Group Companies / Activities (Horizontal Minimal Layout) */}
-      <main className="relative z-10 w-full max-w-4xl mx-auto my-auto py-6 sm:py-8 flex flex-col items-center">
-        {/* Minimal Hierarchy Indicator */}
-        <div className="flex items-center gap-3 mb-6 sm:mb-8 opacity-60">
-          <div className="w-8 sm:w-12 h-[1px] bg-slate-500/50" />
-          <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] text-slate-400">
+      {/* Center Zone: Group Companies / Activities - Dark Contrast Cards */}
+      <main className="relative z-10 w-full max-w-4xl mx-auto my-auto px-6 sm:px-10 lg:px-12 py-6 sm:py-8 flex flex-col items-center">
+        {/* Minimal Section Divider */}
+        <div className="flex items-center gap-3 mb-6 sm:mb-8 opacity-70">
+          <div className="w-8 sm:w-12 h-[1px] bg-slate-300" />
+          <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] text-slate-500 font-medium">
             Verksamheter
           </span>
-          <div className="w-8 sm:w-12 h-[1px] bg-slate-500/50" />
+          <div className="w-8 sm:w-12 h-[1px] bg-slate-300" />
         </div>
 
-        {/* Horizontal Companies Structure */}
+        {/* Horizontal Companies Structure (Dark Cards on White Background) */}
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {companies.map((company) => {
             const hasExternalUrl = Boolean(company.url && company.url.trim() !== '');
@@ -67,22 +44,24 @@ export default function App() {
             const cardContent = (
               <div
                 id={`company-${company.id}`}
-                className={`w-full p-5 sm:p-6 rounded-xs border transition-all duration-300 flex flex-col justify-between ${
+                className={`w-full p-6 sm:p-7 rounded-sm border transition-all duration-300 flex flex-col justify-between shadow-lg shadow-slate-900/10 ${
                   hasExternalUrl
-                    ? 'bg-[#0B1A2C]/60 hover:bg-[#10233B]/80 border-slate-700/60 hover:border-slate-400/80 group cursor-pointer'
-                    : 'bg-[#0B1A2C]/30 border-slate-800/60'
-                } backdrop-blur-xs`}
+                    ? 'bg-[#071322] hover:bg-[#0B1E34] border-[#132A4A] hover:border-slate-500 text-white group cursor-pointer hover:shadow-xl hover:shadow-slate-900/20 hover:-translate-y-0.5'
+                    : 'bg-[#091728] border-[#132A4A]/80 text-white'
+                }`}
               >
-                <div className="flex items-start justify-between gap-3 mb-2">
-                  <h2 className="text-base sm:text-lg font-semibold tracking-tight text-slate-100 group-hover:text-white transition-colors">
+                <div className="flex items-start justify-between gap-3 mb-2.5">
+                  <h2 className="text-base sm:text-lg font-semibold tracking-tight text-white group-hover:text-slate-100 transition-colors">
                     {company.name}
                   </h2>
                   {hasExternalUrl && (
-                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200 shrink-0" />
+                    <div className="p-1 rounded-xs bg-slate-800/80 group-hover:bg-slate-700/80 transition-colors">
+                      <ArrowUpRight className="w-4 h-4 text-slate-300 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200 shrink-0" />
+                    </div>
                   )}
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-400 font-light leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
                   {company.tagline}
                 </p>
               </div>
@@ -95,7 +74,7 @@ export default function App() {
                   href={company.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block focus:outline-hidden focus:ring-1 focus:ring-slate-400/50 rounded-xs"
+                  className="block focus:outline-hidden focus:ring-2 focus:ring-[#071322]/40 rounded-sm"
                   aria-label={`Besök ${company.name}`}
                 >
                   {cardContent}
@@ -108,26 +87,28 @@ export default function App() {
         </div>
       </main>
 
-      {/* Bottom Area: Minimal Contact & Discrete Footer */}
-      <footer className="relative z-10 w-full flex flex-col items-center gap-4 pt-4 pb-2">
-        {/* Contact */}
-        <div className="flex flex-col sm:flex-row items-center gap-1.5 sm:gap-3 text-xs tracking-wider">
-          <span className="font-mono uppercase text-slate-500 text-[10px] sm:text-xs">
-            Kontakt:
-          </span>
-          <a
-            href="mailto:kontakt@nexegroup.se"
-            id="contact-email-link"
-            className="text-slate-300 hover:text-white transition-colors duration-200 font-light border-b border-slate-700/60 hover:border-slate-300"
-          >
-            kontakt@nexegroup.se
-          </a>
-        </div>
+      {/* Bottom Area: Dark Footer Banner */}
+      <footer className="relative z-10 w-full bg-[#071322] text-white border-t border-slate-800/90 py-5 sm:py-6 px-6 sm:px-10 lg:px-16 shadow-2xl">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+          {/* Contact */}
+          <div className="flex items-center gap-2 tracking-wider">
+            <span className="font-mono uppercase text-slate-400 text-[10px] sm:text-xs">
+              Kontakt:
+            </span>
+            <a
+              href="mailto:kontakt@nexegroup.se"
+              id="contact-email-link"
+              className="text-slate-200 hover:text-white transition-colors duration-200 font-normal border-b border-slate-600/80 hover:border-slate-300"
+            >
+              kontakt@nexegroup.se
+            </a>
+          </div>
 
-        {/* Minimal Footer Note */}
-        <p className="text-[10px] sm:text-[11px] font-mono text-slate-600 tracking-wide">
-          © 2026 NEXE GROUP AB · Sverige
-        </p>
+          {/* Minimal Copyright */}
+          <p className="text-[10px] sm:text-[11px] font-mono text-slate-400 tracking-wide">
+            © 2026 NEXE GROUP AB · Sverige
+          </p>
+        </div>
       </footer>
     </div>
   );
