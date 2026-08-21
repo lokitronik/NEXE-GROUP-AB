@@ -2,20 +2,91 @@
 <html lang="sv" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NEXE GROUP AB | Specialiserade verksamheter</title>
-    <meta name="description" content="NEXE GROUP AB utvecklar flera specialiserade verksamhetsområden under en gemensam identitet." />
-    <meta property="og:title" content="NEXE GROUP AB" />
-    <meta property="og:description" content="Specialiserade verksamheter. Gemensamma ambitioner." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>NEXE GROUP AB | Specialiserade verksamhetsgrenar</title>
+    
+    <!-- Primary SEO Meta Tags -->
+    <meta name="title" content="NEXE GROUP AB | Specialiserade verksamhetsgrenar" />
+    <meta name="description" content="Officiell webbplats för NEXE GROUP AB. Vi samlar och driver specialiserade verksamheter som NEXE Sanering och NEXE Solar under en gemensam bolagsstruktur." />
+    <meta name="keywords" content="NEXE GROUP, NEXE GROUP AB, NEXE Sanering, NEXE Solar, bolag Sverige, sanering, teknisk rengöring, solenergi, solcellsanläggningar" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="NEXE GROUP AB" />
+    <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#071322" media="(prefers-color-scheme: dark)" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nexegroup.se/" />
+    <meta property="og:site_name" content="NEXE GROUP AB" />
+    <meta property="og:title" content="NEXE GROUP AB | Specialiserade verksamhetsgrenar" />
+    <meta property="og:description" content="Officiell webbplats för NEXE GROUP AB. Specialiserade verksamheter inom sanering och solenergi under en gemensam bolagsstruktur." />
+    <meta property="og:image" content="/nexe-group-logo-light.png" />
+    <meta property="og:locale" content="sv_SE" />
+
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://nexegroup.se/" />
+    <meta name="twitter:title" content="NEXE GROUP AB | Specialiserade verksamhetsgrenar" />
+    <meta name="twitter:description" content="Officiell webbplats för NEXE GROUP AB. Specialiserade verksamheter inom sanering och solenergi under en gemensam bolagsstruktur." />
+    <meta name="twitter:image" content="/nexe-group-logo-light.png" />
+
+    <!-- Favicon & Mobile Touch Icons -->
+    <link rel="icon" type="image/png" href="/nexe-group-logo-light.png" />
+    <link rel="apple-touch-icon" href="/nexe-group-logo-light.png" />
+
+    <!-- Fonts preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD for Google Search & Rich Results -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Corporation",
+            "@id": "https://nexegroup.se/#organization",
+            "name": "NEXE GROUP AB",
+            "legalName": "NEXE GROUP AB",
+            "url": "https://nexegroup.se/",
+            "logo": "https://nexegroup.se/nexe-group-logo-light.png",
+            "description": "Svenskt bolag med specialiserade verksamhetsgrenar inom sanering, teknisk rengöring och solenergi.",
+            "email": "kontakt@nexegroup.se",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "SE"
+            },
+            "subOrganization": [
+              {
+                "@type": "Organization",
+                "name": "NEXE SANERING",
+                "url": "https://lokitronik.github.io/NEXE-SANERING/",
+                "description": "Specialiserad sanering och teknisk rengöring för krävande miljöer."
+              },
+              {
+                "@type": "Organization",
+                "name": "NEXE SOLAR",
+                "description": "Solenergi, solcellsanläggningar och tekniska installationer."
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://nexegroup.se/#website",
+            "url": "https://nexegroup.se/",
+            "name": "NEXE GROUP AB",
+            "publisher": {
+              "@id": "https://nexegroup.se/#organization"
+            },
+            "inLanguage": "sv-SE"
+          }
+        ]
+      }
+    </script>
   </head>
-  <body class="bg-[#FAFBFD] text-[#0F172A] antialiased selection:bg-[#0B2341] selection:text-white font-sans">
+  <body class="bg-[#FFFFFF] text-[#0F172A] antialiased selection:bg-[#071322] selection:text-white font-sans">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
