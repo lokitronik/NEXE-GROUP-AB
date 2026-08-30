@@ -12,7 +12,7 @@ export const companies: Company[] = [
     id: 'nexe-solar',
     name: 'NEXE SOLAR',
     tagline: 'Solenergi & tekniska installationer',
-    url: '', // Lägg till url vid lansering
+    url: 'https://lokitronik.github.io/NEXE-SOLAR/',
     status: 'active',
   },
 ];
