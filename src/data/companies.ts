@@ -3,7 +3,7 @@ import { Company } from '../types';
 export const companies: Company[] = [
   {
     id: 'nexe-sanering',
-    name: 'NEXE SANERING',
+    name: 'NEXE SPECIALSANERING',
     tagline: 'Specialiserad sanering & teknisk rengöring',
     url: 'https://lokitronik.github.io/NEXE-SANERING/',
     status: 'active',
