@@ -1,47 +1,32 @@
 import React from 'react';
-import logoTransparent from '../assets/images/nexe-group-logo-transparent.png';
-import logoLight from '../assets/images/nexe-group-logo-light.png';
 
 interface LogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'hero';
-  variant?: 'default' | 'light';
+  alt?: string;
 }
 
 export const Logo: React.FC<LogoProps> = ({
   className = '',
   size = 'hero',
-  variant = 'default',
+  alt = 'NEXE GROUP AB – Officiell webbplats',
 }) => {
   const sizeClasses = {
-    sm: 'h-7 sm:h-9 md:h-10 max-w-[180px] sm:max-w-[220px]',
-    md: 'h-10 sm:h-12 md:h-16 max-w-[240px] sm:max-w-[300px]',
-    lg: 'h-16 sm:h-22 md:h-28 max-w-[320px] sm:max-w-[420px]',
-    hero: 'h-24 sm:h-32 md:h-44 lg:h-52 xl:h-56 max-w-[85vw] sm:max-w-lg md:max-w-xl lg:max-w-2xl',
+    sm: 'h-8 sm:h-10 w-auto max-w-[180px] sm:max-w-[220px]',
+    md: 'h-12 sm:h-16 md:h-18 w-auto max-w-[260px] sm:max-w-[340px]',
+    lg: 'h-16 sm:h-22 md:h-26 w-auto max-w-[360px] sm:max-w-[460px]',
+    hero: 'h-20 sm:h-28 md:h-36 lg:h-40 w-auto max-w-[88vw] sm:max-w-md md:max-w-xl lg:max-w-2xl',
   };
-
-  const imageSrc = variant === 'light' ? logoLight : logoTransparent;
-  const fallbackFileName =
-    variant === 'light'
-      ? 'nexe-group-logo-light.png'
-      : 'nexe-group-logo-transparent.png';
 
   return (
     <div className={`inline-flex items-center justify-center select-none ${className}`}>
       <img
-        src={imageSrc}
-        alt="NEXE GROUP AB – Företagsgrupp och specialiserade verksamheter"
-        className={`${sizeClasses[size]} w-auto object-contain transition-transform duration-300 block drop-shadow-sm`}
+        src="/nexe-logo-official.png"
+        alt={alt}
+        className={`${sizeClasses[size]} object-contain block transition-transform duration-300 drop-shadow-xs`}
         referrerPolicy="no-referrer"
         loading="eager"
-        decoding="async"
-        onError={(e) => {
-          const target = e.currentTarget;
-          const fallbackUrl = `${import.meta.env.BASE_URL}${fallbackFileName}`;
-          if (!target.src.endsWith(fallbackFileName)) {
-            target.src = fallbackUrl;
-          }
-        }}
+        decoding="sync"
       />
     </div>
   );

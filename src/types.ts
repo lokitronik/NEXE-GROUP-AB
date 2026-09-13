@@ -1,7 +1,12 @@
-export interface Company {
+export type Language = 'sv' | 'en';
+
+export interface CompanyBanner {
   id: string;
   name: string;
-  tagline: string;
-  url?: string;
-  status?: 'active' | 'upcoming';
+  url: string;
+  image: string;
+  altText: {
+    sv: string;
+    en: string;
+  };
 }
