@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import { Logo } from './components/Logo';
 import { Mail } from 'lucide-react';
 import { Language, CompanyBanner } from './types';
+import saneringBanner from './assets/NEXE_SPECIALSANERING.png';
+import solarBanner from './assets/NEXE_SOLAR.png';
 
 const companyBanners: CompanyBanner[] = [
   {
     id: 'nexe-specialsanering',
     name: 'NEXE SPECIALSANERING',
     url: 'https://lokitronik.github.io/NEXE-SANERING/',
-    image: '/NEXE_SPECIALSANERING.png',
+    image: saneringBanner,
     altText: {
       sv: 'NEXE SPECIALSANERING – Specialiserad sanering och teknisk rengöring. Gå till Nexe Specialsanering.',
       en: 'NEXE SPECIALSANERING – Specialized remediation and technical cleaning. Visit Nexe Specialsanering.',
@@ -18,7 +20,7 @@ const companyBanners: CompanyBanner[] = [
     id: 'nexe-solar',
     name: 'NEXE SOLAR',
     url: 'https://lokitronik.github.io/NEXE-SOLAR/',
-    image: '/NEXE_SOLAR.png',
+    image: solarBanner,
     altText: {
       sv: 'NEXE SOLAR – Solenergi och tekniska installationer. Gå till Nexe Solar.',
       en: 'NEXE SOLAR – Solar energy and technical installations. Visit Nexe Solar.',
@@ -109,19 +111,25 @@ export default function App() {
       {/* Cards Section: Direct Interactive Banners */}
       <main className="relative z-10 w-full max-w-4xl lg:max-w-5xl mx-auto px-4 sm:px-8 py-6 sm:py-8 flex flex-col gap-6 sm:gap-8">
         {companyBanners.map((company) => {
+          const isDark = company.id === 'nexe-specialsanering';
+
           return (
             <a
               key={company.id}
               href={company.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/80 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl focus:outline-hidden focus-visible:ring-3 focus-visible:ring-slate-900 shadow-md select-none bg-slate-900"
+              className={`group block relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl focus:outline-hidden focus-visible:ring-3 focus-visible:ring-slate-900 shadow-md select-none ${
+                isDark
+                  ? 'border-slate-800/80 bg-[#071322]'
+                  : 'border-slate-200/90 bg-[#EEF4FB]'
+              }`}
               aria-label={current.visitAria(company.name)}
             >
               <img
                 src={company.image}
                 alt={company.altText[lang]}
-                className="w-full h-auto object-cover block transition-transform duration-500 ease-out group-hover:scale-[1.015]"
+                className="w-full h-auto object-cover block transition-transform duration-500 ease-out group-hover:scale-[1.015] aspect-[945/435]"
                 loading="eager"
                 decoding="sync"
               />
