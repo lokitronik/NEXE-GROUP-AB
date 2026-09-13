@@ -54,13 +54,16 @@ export default function App() {
     <div className="relative min-h-screen w-full flex flex-col justify-between items-center bg-[#FFFFFF] text-slate-900 selection:bg-[#071322] selection:text-white overflow-x-hidden font-sans">
       
       {/* Background soft ambient structure */}
-      <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+      <div
+        className="absolute inset-0 pointer-events-none select-none"
+        aria-hidden="true"
+      >
         <div className="absolute inset-0 bg-radial from-transparent via-[#F8FAFC]/40 to-[#EDF2F7]/50" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[900px] h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       </div>
 
       {/* Top Bar: Language Switcher */}
-      <header className="relative z-20 w-full max-w-5xl mx-auto pt-4 sm:pt-6 px-6 sm:px-8 flex justify-end items-center">
+      <header className="relative z-20 w-full max-w-[900px] mx-auto pt-4 sm:pt-6 px-6 flex justify-end items-center">
         <div className="inline-flex items-center gap-1.5 p-1 rounded-full bg-slate-100/90 border border-slate-200/80 text-xs font-mono tracking-wider shadow-xs">
           <button
             type="button"
@@ -74,7 +77,9 @@ export default function App() {
           >
             SV
           </button>
+
           <span className="text-slate-300 text-xs select-none">|</span>
+
           <button
             type="button"
             onClick={() => setLang('en')}
@@ -91,17 +96,19 @@ export default function App() {
       </header>
 
       {/* Main Brand & Header Presentation */}
-      <section className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center pt-2 sm:pt-4 px-6 text-center">
+      <section className="relative z-10 w-full max-w-[900px] mx-auto flex flex-col items-center pt-2 sm:pt-4 px-6 text-center">
+        
         {/* Official NEXE GROUP AB Logo */}
         <div className="transition-transform duration-500 hover:scale-[1.01] mb-5 sm:mb-7">
           <Logo size="hero" />
         </div>
 
-        {/* Corporate Headings matching the exact user specification */}
-        <div className="max-w-3xl flex flex-col items-center gap-1.5 sm:gap-2">
+        {/* Corporate Headings */}
+        <div className="max-w-[700px] flex flex-col items-center gap-1.5 sm:gap-2">
           <h1 className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-[0.24em] text-slate-900">
             {current.headline}
           </h1>
+
           <p className="text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.18em] text-slate-600">
             {current.subhead}
           </p>
@@ -109,7 +116,7 @@ export default function App() {
       </section>
 
       {/* Cards Section: Direct Interactive Banners */}
-      <main className="relative z-10 w-full max-w-4xl lg:max-w-5xl mx-auto px-4 sm:px-8 py-6 sm:py-8 flex flex-col gap-6 sm:gap-8">
+      <main className="relative z-10 w-full max-w-[900px] mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col gap-6 sm:gap-8">
         {companyBanners.map((company) => {
           const isDark = company.id === 'nexe-specialsanering';
 
@@ -139,7 +146,8 @@ export default function App() {
       </main>
 
       {/* Footer Area: Contact Button & Stockholm Sweden */}
-      <footer className="relative z-10 w-full max-w-5xl mx-auto pt-3 pb-8 sm:pb-10 px-6 flex flex-col items-center gap-3 sm:gap-3.5 text-center">
+      <footer className="relative z-10 w-full max-w-[900px] mx-auto pt-3 pb-8 sm:pb-10 px-6 flex flex-col items-center gap-3 sm:gap-3.5 text-center">
+        
         {/* Email Pill Button */}
         <a
           href="mailto:kontakt@nexegroup.se"
