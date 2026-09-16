@@ -68,11 +68,11 @@ export default function App() {
         aria-hidden="true"
       >
         <div className="absolute inset-0 bg-radial from-transparent via-[#F8FAFC]/40 to-[#EDF2F7]/50" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[900px] h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
       </div>
 
       {/* Top Bar: Language Switcher */}
-      <header className="relative z-20 w-full max-w-[900px] mx-auto pt-4 sm:pt-6 px-6 flex justify-end items-center">
+      <header className="relative z-20 w-full max-w-6xl mx-auto pt-4 sm:pt-6 px-4 sm:px-6 lg:px-8 flex justify-end items-center">
         <div className="inline-flex items-center gap-1.5 p-1 rounded-full bg-slate-100/90 border border-slate-200/80 text-xs font-mono tracking-wider shadow-xs">
           <button
             type="button"
@@ -105,27 +105,27 @@ export default function App() {
       </header>
 
       {/* Main Brand & Header Presentation */}
-      <section className="relative z-10 w-full max-w-[900px] mx-auto flex flex-col items-center pt-2 sm:pt-4 px-6 text-center">
+      <section className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center pt-2 sm:pt-3 px-4 sm:px-6 text-center">
         
         {/* Official NEXE GROUP AB Logo */}
-        <div className="transition-transform duration-500 hover:scale-[1.01] mb-5 sm:mb-7">
+        <div className="transition-transform duration-500 hover:scale-[1.01] mb-4 sm:mb-6">
           <Logo size="hero" />
         </div>
 
         {/* Corporate Headings */}
-        <div className="max-w-[700px] flex flex-col items-center gap-1.5 sm:gap-2">
-          <h1 className="text-base sm:text-lg md:text-xl font-bold uppercase tracking-[0.24em] text-slate-900">
+        <div className="max-w-[760px] flex flex-col items-center gap-1.5 sm:gap-2">
+          <h1 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold uppercase tracking-[0.22em] text-slate-900">
             {current.headline}
           </h1>
 
-          <p className="text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.18em] text-slate-600">
+          <p className="text-xs sm:text-sm md:text-base font-semibold uppercase tracking-[0.16em] text-slate-600">
             {current.subhead}
           </p>
         </div>
       </section>
 
-      {/* Cards Section: Direct Interactive Banners */}
-      <main className="relative z-10 w-full max-w-[900px] mx-auto px-4 sm:px-6 py-6 sm:py-8 flex flex-col gap-6 sm:gap-8">
+      {/* Cards Section: Direct Interactive Banners (Horizontal in 3 columns on tablet/desktop, stacked on mobile) */}
+      <main className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-7 items-stretch">
         {companyBanners.map((company) => {
           const isDark = company.id === 'nexe-specialsanering';
 
@@ -135,7 +135,7 @@ export default function App() {
               href={company.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group block relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl focus:outline-hidden focus-visible:ring-3 focus-visible:ring-slate-900 shadow-md select-none ${
+              className={`group flex flex-col relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-xl focus:outline-hidden focus-visible:ring-3 focus-visible:ring-slate-900 shadow-sm select-none ${
                 isDark
                   ? 'border-slate-800/80 bg-[#071322]'
                   : company.id === 'nexe-rivning'
@@ -144,20 +144,22 @@ export default function App() {
               }`}
               aria-label={current.visitAria(company.name)}
             >
-              <img
-                src={company.image}
-                alt={company.altText[lang]}
-                className="w-full h-auto object-cover block transition-transform duration-500 ease-out group-hover:scale-[1.015] aspect-[945/435]"
-                loading="eager"
-                decoding="sync"
-              />
+              <div className="w-full aspect-[945/435] overflow-hidden flex items-center justify-center">
+                <img
+                  src={company.image}
+                  alt={company.altText[lang]}
+                  className="w-full h-full object-cover block transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                  loading="eager"
+                  decoding="sync"
+                />
+              </div>
             </a>
           );
         })}
       </main>
 
       {/* Footer Area: Contact Button & Stockholm Sweden */}
-      <footer className="relative z-10 w-full max-w-[900px] mx-auto pt-3 pb-8 sm:pb-10 px-6 flex flex-col items-center gap-3 sm:gap-3.5 text-center">
+      <footer className="relative z-10 w-full max-w-6xl mx-auto pt-2 pb-6 sm:pb-8 px-4 sm:px-6 flex flex-col items-center gap-2.5 sm:gap-3 text-center">
         
         {/* Email Pill Button */}
         <a
