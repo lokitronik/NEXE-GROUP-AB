@@ -4,6 +4,7 @@ import { Mail } from 'lucide-react';
 import { Language, CompanyBanner } from './types';
 import saneringBanner from './assets/NEXE_SPECIALSANERING.png';
 import solarBanner from './assets/NEXE_SOLAR.png';
+import rivningBanner from './assets/NEXE_RIVNING.png';
 
 const companyBanners: CompanyBanner[] = [
   {
@@ -26,6 +27,16 @@ const companyBanners: CompanyBanner[] = [
       en: 'NEXE SOLAR – Solar energy and technical installations. Visit Nexe Solar.',
     },
   },
+  {
+    id: 'nexe-rivning',
+    name: 'NEXE RIVNING',
+    url: 'https://lokitronik.github.io/NEXE-RIVNING/',
+    image: rivningBanner,
+    altText: {
+      sv: 'NEXE RIVNING – Rivning med omtanke, köksrivning och förberedelser inför renovering. Gå till Nexe Rivning.',
+      en: 'NEXE RIVNING – Thoughtful demolition, kitchen removal, and renovation prep. Visit Nexe Rivning.',
+    },
+  },
 ];
 
 export default function App() {
@@ -33,15 +44,15 @@ export default function App() {
 
   const content = {
     sv: {
-      headline: 'TVÅ SPECIALISTOMRÅDEN. ETT NEXE.',
-      subhead: 'RENARE MILJÖER. SMARTARE ENERGILÖSNINGAR.',
+      headline: 'TRE SPECIALISTOMRÅDEN. ETT NEXE.',
+      subhead: 'RENARE MILJÖER. SMARTARE ENERGILÖSNINGAR. RIVNING MED OMTANKE.',
       contactText: 'kontakt@nexegroup.se',
       footerLocation: 'NEXE GROUP AB · STOCKHOLM · SVERIGE',
       visitAria: (name: string) => `Besök ${name} officiella webbplats`,
     },
     en: {
-      headline: 'TWO SPECIALIZED DIVISIONS. ONE NEXE.',
-      subhead: 'CLEANER ENVIRONMENTS. SMARTER ENERGY SOLUTIONS.',
+      headline: 'THREE SPECIALIZED DIVISIONS. ONE NEXE.',
+      subhead: 'CLEANER ENVIRONMENTS. SMARTER ENERGY SOLUTIONS. THOUGHTFUL DEMOLITION.',
       contactText: 'kontakt@nexegroup.se',
       footerLocation: 'NEXE GROUP AB · STOCKHOLM · SWEDEN',
       visitAria: (name: string) => `Visit ${name} official website`,
@@ -129,7 +140,9 @@ export default function App() {
               className={`group block relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl focus:outline-hidden focus-visible:ring-3 focus-visible:ring-slate-900 shadow-md select-none ${
                 isDark
                   ? 'border-slate-800/80 bg-[#071322]'
-                  : 'border-slate-200/90 bg-[#EEF4FB]'
+                  : company.id === 'nexe-rivning'
+                    ? 'border-slate-200/90 bg-[#F8FAFC]'
+                    : 'border-slate-200/90 bg-[#EEF4FB]'
               }`}
               aria-label={current.visitAria(company.name)}
             >
