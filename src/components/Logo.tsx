@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAssetUrl } from '../utils';
 
 interface LogoProps {
   className?: string;
@@ -18,10 +19,12 @@ export const Logo: React.FC<LogoProps> = ({
     hero: 'h-20 sm:h-28 md:h-36 lg:h-40 w-auto max-w-[88vw] sm:max-w-md md:max-w-xl lg:max-w-2xl',
   };
 
+  const logoSrc = getAssetUrl('nexe-logo-official.png');
+
   return (
     <div className={`inline-flex items-center justify-center select-none ${className}`}>
       <img
-        src="/nexe-logo-official.png"
+        src={logoSrc}
         alt={alt}
         className={`${sizeClasses[size]} object-contain block transition-transform duration-300 drop-shadow-xs`}
         referrerPolicy="no-referrer"
