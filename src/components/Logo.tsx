@@ -1,5 +1,4 @@
 import React from 'react';
-import officialLogo from '../assets/nexe-logo-official.png';
 
 interface LogoProps {
   className?: string;
@@ -22,7 +21,7 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <div className={`inline-flex items-center justify-center select-none ${className}`}>
       <img
-        src={officialLogo}
+        src="/nexe-logo-official.png"
         alt={alt}
         className={`${sizeClasses[size]} object-contain block transition-transform duration-300 drop-shadow-xs`}
         referrerPolicy="no-referrer"

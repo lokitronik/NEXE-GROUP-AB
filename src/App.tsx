@@ -2,16 +2,13 @@ import React, { useState } from 'react';
 import { Logo } from './components/Logo';
 import { Mail } from 'lucide-react';
 import { Language, CompanyBanner } from './types';
-import saneringBanner from './assets/NEXE_SPECIALSANERING.png';
-import solarBanner from './assets/NEXE_SOLAR.png';
-import rivningBanner from './assets/NEXE_RIVNING.png';
 
 const companyBanners: CompanyBanner[] = [
   {
     id: 'nexe-specialsanering',
     name: 'NEXE SPECIALSANERING',
     url: 'https://lokitronik.github.io/NEXE-SANERING/',
-    image: saneringBanner,
+    image: '/NEXE_SPECIALSANERING.png',
     altText: {
       sv: 'NEXE SPECIALSANERING – Specialiserad sanering och teknisk rengöring. Gå till Nexe Specialsanering.',
       en: 'NEXE SPECIALSANERING – Specialized remediation and technical cleaning. Visit Nexe Specialsanering.',
@@ -21,7 +18,7 @@ const companyBanners: CompanyBanner[] = [
     id: 'nexe-solar',
     name: 'NEXE SOLAR',
     url: 'https://lokitronik.github.io/NEXE-SOLAR/',
-    image: solarBanner,
+    image: '/NEXE_SOLAR.png',
     altText: {
       sv: 'NEXE SOLAR – Solenergi och tekniska installationer. Gå till Nexe Solar.',
       en: 'NEXE SOLAR – Solar energy and technical installations. Visit Nexe Solar.',
@@ -31,7 +28,7 @@ const companyBanners: CompanyBanner[] = [
     id: 'nexe-rivning',
     name: 'NEXE RIVNING',
     url: 'https://lokitronik.github.io/NEXE-RIVNING/',
-    image: rivningBanner,
+    image: '/NEXE_RIVNING.png',
     altText: {
       sv: 'NEXE RIVNING – Rivning med omtanke, köksrivning och förberedelser inför renovering. Gå till Nexe Rivning.',
       en: 'NEXE RIVNING – Thoughtful demolition, kitchen removal, and renovation prep. Visit Nexe Rivning.',
