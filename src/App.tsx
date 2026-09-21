@@ -6,7 +6,7 @@ import { getAssetUrl } from './utils';
 
 const companyBanners: CompanyBanner[] = [
   {
-    id: 'nexe-specialsanering',
+    id: 'nexe-specialsanering', 
     name: 'NEXE SPECIALSANERING',
     isUnderConstruction: true,
     image: getAssetUrl('NEXE_SPECIALSANERING.png'),
