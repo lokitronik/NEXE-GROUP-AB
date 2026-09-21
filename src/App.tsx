@@ -8,31 +8,31 @@ const companyBanners: CompanyBanner[] = [
   {
     id: 'nexe-specialsanering',
     name: 'NEXE SPECIALSANERING',
-    url: 'https://lokitronik.github.io/NEXE-SANERING/',
+    isUnderConstruction: true,
     image: getAssetUrl('NEXE_SPECIALSANERING.png'),
     altText: {
-      sv: 'NEXE SPECIALSANERING – Specialiserad sanering och teknisk rengöring. Gå till Nexe Specialsanering.',
-      en: 'NEXE SPECIALSANERING – Specialized remediation and technical cleaning. Visit Nexe Specialsanering.',
+      sv: 'NEXE SPECIALSANERING – Specialiserad sanering och teknisk rengöring. Under uppbyggnad.',
+      en: 'NEXE SPECIALSANERING – Specialized remediation and technical cleaning. Under construction.',
     },
   },
   {
     id: 'nexe-solar',
     name: 'NEXE SOLAR',
-    url: 'https://lokitronik.github.io/NEXE-SOLAR/',
+    url: 'https://nexesolar.se/',
     image: getAssetUrl('NEXE_SOLAR.png'),
     altText: {
-      sv: 'NEXE SOLAR – Solenergi och tekniska installationer. Gå till Nexe Solar.',
-      en: 'NEXE SOLAR – Solar energy and technical installations. Visit Nexe Solar.',
+      sv: 'NEXE SOLAR – Solenergi och tekniska installationer. Gå till nexesolar.se.',
+      en: 'NEXE SOLAR – Solar energy and technical installations. Visit nexesolar.se.',
     },
   },
   {
     id: 'nexe-rivning',
     name: 'NEXE RIVNING',
-    url: 'https://lokitronik.github.io/NEXE-RIVNING/',
+    url: 'https://nexerivning.se/',
     image: getAssetUrl('NEXE_RIVNING.png'),
     altText: {
-      sv: 'NEXE RIVNING – Rivning med omtanke, köksrivning och förberedelser inför renovering. Gå till Nexe Rivning.',
-      en: 'NEXE RIVNING – Thoughtful demolition, kitchen removal, and renovation prep. Visit Nexe Rivning.',
+      sv: 'NEXE RIVNING – Rivning med omtanke, köksrivning och förberedelser inför renovering. Gå till nexerivning.se.',
+      en: 'NEXE RIVNING – Thoughtful demolition, kitchen removal, and renovation prep. Visit nexerivning.se.',
     },
   },
 ];
@@ -44,6 +44,7 @@ export default function App() {
     sv: {
       headline: 'TRE SPECIALISTOMRÅDEN. ETT NEXE.',
       subhead: 'RENARE MILJÖER. SMARTARE ENERGILÖSNINGAR. RIVNING MED OMTANKE.',
+      underConstruction: 'UNDER UPPBYGGNAD',
       contactText: 'kontakt@nexegroup.se',
       footerLocation: 'NEXE GROUP AB · STOCKHOLM · SVERIGE',
       visitAria: (name: string) => `Besök ${name} officiella webbplats`,
@@ -51,6 +52,7 @@ export default function App() {
     en: {
       headline: 'THREE SPECIALIZED DIVISIONS. ONE NEXE.',
       subhead: 'CLEANER ENVIRONMENTS. SMARTER ENERGY SOLUTIONS. THOUGHTFUL DEMOLITION.',
+      underConstruction: 'UNDER CONSTRUCTION',
       contactText: 'kontakt@nexegroup.se',
       footerLocation: 'NEXE GROUP AB · STOCKHOLM · SWEDEN',
       visitAria: (name: string) => `Visit ${name} official website`,
@@ -128,6 +130,36 @@ export default function App() {
       <main className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 lg:gap-7 items-stretch">
         {companyBanners.map((company) => {
           const isDark = company.id === 'nexe-specialsanering';
+
+          if (company.isUnderConstruction) {
+            return (
+              <div
+                key={company.id}
+                className="flex flex-col relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-800/80 bg-[#071322] shadow-xs select-none"
+                aria-label={`${company.name} – ${current.underConstruction}`}
+              >
+                <div className="w-full aspect-[945/435] overflow-hidden relative flex items-center justify-center">
+                  {/* Subtle translucent banner with darkened opacity */}
+                  <img
+                    src={company.image}
+                    alt={company.altText[lang]}
+                    className="w-full h-full object-cover block opacity-40 filter brightness-90"
+                    loading="eager"
+                    decoding="sync"
+                  />
+                  {/* Semi-transparent frosted glass overlay with status badge */}
+                  <div className="absolute inset-0 bg-[#071322]/40 backdrop-blur-[2px] flex items-center justify-center p-3">
+                    <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-slate-950/75 border border-slate-700/80 backdrop-blur-md shadow-lg">
+                      <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-amber-400/90 animate-pulse" />
+                      <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-slate-200 whitespace-nowrap">
+                        {current.underConstruction}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          }
 
           return (
             <a
