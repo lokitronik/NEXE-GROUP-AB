@@ -1,5 +1,6 @@
 {
   "name": "NEXE GROUP AB",
   "description": "Officiell webbplats för NEXE GROUP AB – ett bolag med flera specialiserade verksamhetsgrenar och företagsnamn.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

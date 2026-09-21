@@ -42,16 +42,16 @@ export default function App() {
 
   const content = {
     sv: {
-      headline: 'TRE SPECIALISTOMRÅDEN. ETT NEXE.',
-      subhead: 'RENARE MILJÖER. SMARTARE ENERGILÖSNINGAR. RIVNING MED OMTANKE.',
+      headline: 'TRE SPECIALISTOMRÅDEN. ETT NEXE',
+      subhead: 'RENARE MILJÖER · SMARTARE ENERGILÖSNINGAR · RIVNING MED OMTANKE',
       underConstruction: 'UNDER UPPBYGGNAD',
       contactText: 'kontakt@nexegroup.se',
       footerLocation: 'NEXE GROUP AB · STOCKHOLM · SVERIGE',
       visitAria: (name: string) => `Besök ${name} officiella webbplats`,
     },
     en: {
-      headline: 'THREE SPECIALIZED DIVISIONS. ONE NEXE.',
-      subhead: 'CLEANER ENVIRONMENTS. SMARTER ENERGY SOLUTIONS. THOUGHTFUL DEMOLITION.',
+      headline: 'THREE SPECIALIZED DIVISIONS. ONE NEXE',
+      subhead: 'CLEANER ENVIRONMENTS · SMARTER ENERGY SOLUTIONS · THOUGHTFUL DEMOLITION',
       underConstruction: 'UNDER CONSTRUCTION',
       contactText: 'kontakt@nexegroup.se',
       footerLocation: 'NEXE GROUP AB · STOCKHOLM · SWEDEN',
