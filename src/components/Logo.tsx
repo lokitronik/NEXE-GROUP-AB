@@ -22,7 +22,10 @@ export const Logo: React.FC<LogoProps> = ({
   const logoSrc = getAssetUrl('nexe-logo-official.png');
 
   return (
-    <div className={`inline-flex items-center justify-center select-none ${className}`}>
+    <div
+      className={`notranslate inline-flex items-center justify-center select-none ${className}`}
+      translate="no"
+    >
       <img
         src={logoSrc}
         alt={alt}

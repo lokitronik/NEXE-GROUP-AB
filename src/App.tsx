@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Logo } from './components/Logo';
-import { Mail } from 'lucide-react';
+import { Mail, Copy, Check } from 'lucide-react';
 import { Language, CompanyBanner } from './types';
 import { getAssetUrl } from './utils';
 
@@ -39,6 +39,19 @@ const companyBanners: CompanyBanner[] = [
 
 export default function App() {
   const [lang, setLang] = useState<Language>('sv');
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      await navigator.clipboard.writeText('kontakt@nexegroup.se');
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      setCopied(false);
+    }
+  };
 
   const content = {
     sv: {
@@ -135,7 +148,8 @@ export default function App() {
             return (
               <div
                 key={company.id}
-                className="flex flex-col relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-800/80 bg-[#071322] shadow-xs select-none"
+                className="notranslate flex flex-col relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-800/80 bg-[#071322] shadow-xs select-none"
+                translate="no"
                 aria-label={`${company.name} – ${current.underConstruction}`}
               >
                 <div className="w-full aspect-[945/435] overflow-hidden relative flex items-center justify-center">
@@ -149,9 +163,9 @@ export default function App() {
                   />
                   {/* Semi-transparent frosted glass overlay with status badge */}
                   <div className="absolute inset-0 bg-[#071322]/40 backdrop-blur-[2px] flex items-center justify-center p-3">
-                    <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-slate-950/75 border border-slate-700/80 backdrop-blur-md shadow-lg">
+                    <div className="notranslate inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-slate-950/75 border border-slate-700/80 backdrop-blur-md shadow-lg" translate="no">
                       <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-amber-400/90 animate-pulse" />
-                      <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-slate-200 whitespace-nowrap">
+                      <span className="notranslate text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-slate-200 whitespace-nowrap" translate="no">
                         {current.underConstruction}
                       </span>
                     </div>
@@ -167,13 +181,14 @@ export default function App() {
               href={company.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group flex flex-col relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-xl focus:outline-hidden focus-visible:ring-3 focus-visible:ring-slate-900 shadow-sm select-none ${
+              className={`group notranslate flex flex-col relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-xl focus:outline-hidden focus-visible:ring-3 focus-visible:ring-slate-900 shadow-sm select-none ${
                 isDark
                   ? 'border-slate-800/80 bg-[#071322]'
                   : company.id === 'nexe-rivning'
                     ? 'border-slate-200/90 bg-[#F8FAFC]'
                     : 'border-slate-200/90 bg-[#EEF4FB]'
               }`}
+              translate="no"
               aria-label={current.visitAria(company.name)}
             >
               <div className="w-full aspect-[945/435] overflow-hidden flex items-center justify-center">
@@ -191,23 +206,72 @@ export default function App() {
       </main>
 
       {/* Footer Area: Contact Button & Stockholm Sweden */}
-      <footer className="relative z-10 w-full max-w-6xl mx-auto pt-2 pb-6 sm:pb-8 px-4 sm:px-6 flex flex-col items-center gap-2.5 sm:gap-3 text-center">
+      <footer className="relative z-10 w-full max-w-6xl mx-auto pt-2 pb-6 sm:pb-8 px-4 sm:px-6 flex flex-col items-center gap-3 sm:gap-3.5 text-center">
         
-        {/* Email Pill Button */}
-        <a
-          href="mailto:kontakt@nexegroup.se"
-          id="contact-email-link"
-          className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full border border-slate-200 bg-slate-50/80 hover:bg-slate-100 hover:border-slate-300 text-slate-800 text-xs sm:text-sm font-medium transition-all duration-200 shadow-xs hover:shadow-sm"
-          aria-label="Skicka e-post till kontakt@nexegroup.se"
-        >
-          <Mail className="w-4 h-4 text-slate-600" />
-          <span>{current.contactText}</span>
-        </a>
+        {/* Contact Section: Email Pill Link and Copy Action Protected from Translation */}
+        <div className="flex items-center gap-2 max-w-full">
+          {/* Main Email Pill Link */}
+          <a
+            href="mailto:kontakt@nexegroup.se"
+            id="contact-email-link"
+            className="notranslate inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full border border-slate-200/90 bg-slate-50/90 hover:bg-slate-100 hover:border-slate-300 text-slate-800 text-xs sm:text-sm font-medium transition-all duration-200 shadow-xs hover:shadow-sm"
+            translate="no"
+            aria-label={lang === 'sv' ? 'Skicka e-post till kontakt@nexegroup.se' : 'Send email to kontakt@nexegroup.se'}
+          >
+            <Mail className="w-4 h-4 text-slate-600 shrink-0" />
+            <span className="notranslate font-mono tracking-tight" translate="no">
+              {current.contactText}
+            </span>
+          </a>
 
-        {/* Location & Copyright */}
-        <p className="text-[11px] sm:text-xs font-mono text-slate-500 tracking-wider">
-          {current.footerLocation}
-        </p>
+          {/* Quick Copy Button with Feedback Status */}
+          <button
+            type="button"
+            onClick={handleCopyEmail}
+            className="notranslate inline-flex items-center gap-1.5 px-3 py-2 rounded-full border border-slate-200/90 bg-slate-50/90 hover:bg-slate-100 hover:border-slate-300 text-slate-600 hover:text-slate-900 text-xs font-medium transition-all duration-200 shadow-xs hover:shadow-sm cursor-pointer select-none"
+            translate="no"
+            aria-label={
+              copied
+                ? (lang === 'sv' ? 'E-postadress kopierad' : 'Email address copied')
+                : (lang === 'sv' ? 'Kopiera kontakt@nexegroup.se' : 'Copy kontakt@nexegroup.se')
+            }
+            title={lang === 'sv' ? 'Kopiera e-postadress' : 'Copy email address'}
+          >
+            {copied ? (
+              <>
+                <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span className="notranslate text-emerald-700 text-xs font-medium" translate="no">
+                  {lang === 'sv' ? 'Kopierad' : 'Copied'}
+                </span>
+              </>
+            ) : (
+              <>
+                <Copy className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                <span className="notranslate sr-only sm:not-sr-only sm:text-[11px] text-slate-500" translate="no">
+                  {lang === 'sv' ? 'Kopiera' : 'Copy'}
+                </span>
+              </>
+            )}
+          </button>
+        </div>
+
+        {/* Footer: Mother Website nexegroup.se, Holding & Location */}
+        <div className="flex flex-wrap items-center justify-center gap-x-2.5 gap-y-1 text-[11px] sm:text-xs font-mono text-slate-500 tracking-wider">
+          <a
+            href="https://nexegroup.se/"
+            className="notranslate hover:text-slate-900 transition-colors underline decoration-slate-300 underline-offset-4 hover:decoration-slate-800 font-medium"
+            translate="no"
+            aria-label="NEXE GROUP AB webbplats nexegroup.se"
+          >
+            nexegroup.se
+          </a>
+          <span className="text-slate-300 select-none">·</span>
+          <span className="notranslate font-semibold text-slate-700" translate="no">
+            NEXE GROUP AB
+          </span>
+          <span className="text-slate-300 select-none">·</span>
+          <span>{lang === 'sv' ? 'STOCKHOLM · SVERIGE' : 'STOCKHOLM · SWEDEN'}</span>
+        </div>
       </footer>
     </div>
   );
