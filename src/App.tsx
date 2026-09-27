@@ -6,13 +6,13 @@ import { getAssetUrl } from './utils';
 
 const companyBanners: CompanyBanner[] = [
   {
-    id: 'nexe-specialsanering', 
+    id: 'nexe-specialsanering',
     name: 'NEXE SPECIALSANERING',
-    isUnderConstruction: true,
+    url: 'https://nexespecialsanering.se/',
     image: getAssetUrl('NEXE_SPECIALSANERING.png'),
     altText: {
-      sv: 'NEXE SPECIALSANERING – Specialiserad sanering och teknisk rengöring. Under uppbyggnad.',
-      en: 'NEXE SPECIALSANERING – Specialized remediation and technical cleaning. Under construction.',
+      sv: 'NEXE SPECIALSANERING – Specialiserad sanering och teknisk rengöring. Gå till nexespecialsanering.se.',
+      en: 'NEXE SPECIALSANERING – Specialized remediation and technical cleaning. Visit nexespecialsanering.se.',
     },
   },
   {
