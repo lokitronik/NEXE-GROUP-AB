@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Logo } from './components/Logo';
-import { Mail, Copy, Check } from 'lucide-react';
+import { Mail, Copy, Check, Linkedin, Instagram } from 'lucide-react';
 import { Language, CompanyBanner } from './types';
 import { getAssetUrl } from './utils';
 
@@ -208,8 +208,8 @@ export default function App() {
       {/* Footer Area: Contact Button & Stockholm Sweden */}
       <footer className="relative z-10 w-full max-w-6xl mx-auto pt-2 pb-6 sm:pb-8 px-4 sm:px-6 flex flex-col items-center gap-3 sm:gap-3.5 text-center">
         
-        {/* Contact Section: Email Pill Link and Copy Action Protected from Translation */}
-        <div className="flex items-center gap-2 max-w-full">
+        {/* Contact & Social Section: Email Pill Link, Copy Action & Social Links */}
+        <div className="flex flex-wrap items-center justify-center gap-2 max-w-full">
           {/* Main Email Pill Link */}
           <a
             href="mailto:kontakt@nexegroup.se"
@@ -253,6 +253,33 @@ export default function App() {
               </>
             )}
           </button>
+
+          {/* Social Profiles: LinkedIn & Instagram */}
+          <div className="inline-flex items-center gap-1.5 ml-0.5">
+            <a
+              href="https://www.linkedin.com/company/nexe-group-ab/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="notranslate inline-flex items-center justify-center p-2 rounded-full border border-slate-200/90 bg-slate-50/90 hover:bg-[#0A66C2]/10 hover:border-[#0A66C2]/40 text-slate-600 hover:text-[#0A66C2] transition-all duration-200 shadow-xs hover:shadow-sm"
+              translate="no"
+              aria-label={lang === 'sv' ? 'Besök NEXE GROUP AB på LinkedIn' : 'Visit NEXE GROUP AB on LinkedIn'}
+              title="LinkedIn"
+            >
+              <Linkedin className="w-4 h-4 shrink-0" />
+            </a>
+
+            <a
+              href="https://www.instagram.com/nexegroupab"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="notranslate inline-flex items-center justify-center p-2 rounded-full border border-slate-200/90 bg-slate-50/90 hover:bg-pink-500/10 hover:border-pink-500/40 text-slate-600 hover:text-pink-600 transition-all duration-200 shadow-xs hover:shadow-sm"
+              translate="no"
+              aria-label={lang === 'sv' ? 'Besök NEXE GROUP AB på Instagram' : 'Visit NEXE GROUP AB on Instagram'}
+              title="Instagram"
+            >
+              <Instagram className="w-4 h-4 shrink-0" />
+            </a>
+          </div>
         </div>
 
         {/* Footer: Mother Website nexegroup.se, Holding & Location */}
