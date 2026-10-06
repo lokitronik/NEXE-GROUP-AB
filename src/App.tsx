@@ -56,7 +56,7 @@ export default function App() {
   const content = {
     sv: {
       headline: 'TRE SPECIALISTOMRÅDEN. ETT NEXE',
-      subhead: 'RENARE MILJÖER · SMARTARE ENERGILÖSNINGAR · RIVNING MED OMTANKE',
+      subhead: 'SPECIALSANERING · SOLCELLSMONTAGE · SELEKTIV RIVNING',
       underConstruction: 'UNDER UPPBYGGNAD',
       contactText: 'kontakt@nexegroup.se',
       footerLocation: 'NEXE GROUP AB · STOCKHOLM · SVERIGE',
@@ -64,7 +64,7 @@ export default function App() {
     },
     en: {
       headline: 'THREE SPECIALIZED DIVISIONS. ONE NEXE',
-      subhead: 'CLEANER ENVIRONMENTS · SMARTER ENERGY SOLUTIONS · THOUGHTFUL DEMOLITION',
+      subhead: 'SPECIALISED REMEDIATION · SOLAR PANEL INSTALLATION · SELECTIVE DEMOLITION',
       underConstruction: 'UNDER CONSTRUCTION',
       contactText: 'kontakt@nexegroup.se',
       footerLocation: 'NEXE GROUP AB · STOCKHOLM · SWEDEN',
